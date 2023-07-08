@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../../helpers/ApiProductos";
 import { Link } from "react-router-dom";
+import { BotonBorrar } from "../../components/botones/BotonBorrar";
 export const Principal = () => {
   const [products, setProducts] = useState([]);
 
@@ -18,6 +19,8 @@ export const Principal = () => {
           <p>S/. {prod.price}</p>
           <p>{prod.category}</p>
           <Link to={prod.id}>Ver Detaelles</Link>
+          <BotonBorrar id={prod.id} />
+          <Link to={`/producto/editproduct/${prod.id}`}>Editar</Link>
         </div>
       ))}
     </div>

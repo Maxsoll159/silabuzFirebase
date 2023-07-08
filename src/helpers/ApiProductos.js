@@ -1,9 +1,12 @@
 import {
+  addDoc,
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
   query,
+  updateDoc,
   where,
 } from "firebase/firestore";
 import { db } from "../firebase/Firebase";
@@ -30,3 +33,19 @@ export const getProductCategory = async (categoria) => {
   });
   return data;
 };
+
+export const postProduct = async (data) => {
+  const producto = await addDoc(collection(db, "products"), data);
+  return producto.id;
+};
+
+
+export const deleteProduct = async(id) =>{
+    const producto = await deleteDoc(doc(db, "products", id))
+    return producto
+}
+
+export const editProduct = async(id, data)=>{
+    const producto = await updateDoc(doc(db, "products", id), data)
+    return producto
+}

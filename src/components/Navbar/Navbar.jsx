@@ -4,9 +4,10 @@ export const Navbar = () =>{
         <nav>
             <div>
                 <p>LOGO</p>
-                <div>
+                <div style={{display: "flex", gap: "25px", justifyContent: "center"}}>
                     <Link to="/categoria/comida">Comida</Link>
                     <Link to="/categoria/muebles">Muebles</Link>
+                    <Link to="tiendita/login">Ir al Login</Link>
                 </div>
             </div>
         </nav>

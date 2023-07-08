@@ -4,6 +4,8 @@ import { ProductoId } from "../pages/products/ProductId";
 import { Categoria } from "../pages/Categeorias/Categorias";
 import { Navbar } from "../components/Navbar/Navbar";
 import { CrearProducto } from "../pages/CrearProduct/CrearProducto";
+import { EditarProducto } from "../pages/editProducto/EditarProducto";
+import { Login } from "../pages/Login/Login";
 
 export const RouterApp = () => {
   return (
@@ -14,6 +16,8 @@ export const RouterApp = () => {
         <Route path="/:id" element={<ProductoId />} />
         <Route path="/categoria/:categoria" element={<Categoria />} />
         <Route path="/producto/newproduct" element={<CrearProducto />} />
+        <Route path="/producto/editproduct/:id" element={<EditarProducto />} />
+        <Route path="/tiendita/Login" element={<Login />} />
       </Routes>
     </>
   );
